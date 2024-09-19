@@ -1,11 +1,12 @@
-const express = require ('express');
-const path = require ('path');
-const app = express();
+const mongoose = require('mongoose');
+const express = require('express');
+const app = express()
 
-app.get("/ositos", (req,res) => {
-  res.send("Ositos");
-});
+mongoose.connect('mongodb://nath:12345678@monguito:27017/miapp?authSource=admin')
 
-app.listen(3000,() =>{
-  console.log("Server run on port 3000");
-});
+app.get('/ositos', (_req, res) => {
+  console.log('creando...')
+  return res.send('ok')
+})
+
+app.listen(3000, () => console.log('listening...'));
