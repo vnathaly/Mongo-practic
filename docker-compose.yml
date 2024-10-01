@@ -14,3 +14,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=nath
       - MONGO_INITDB_ROOT_PASSWORD=12345678
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
